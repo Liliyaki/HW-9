@@ -11,71 +11,79 @@ public class Main {
             sum = sum + j;
         }
         System.out.println("Сумма выплат составляет " + sum + " рублей.");
-        int max = Arrays.stream(inputArray1).filter(i -> i >= -1).max().orElse(-1);
+        int max = -1;
+        for (int j : inputArray1) {
+            if (j > max) {
+                max = j;
+            }
+        }
         System.out.println("Максимальное значение " + max + " рублей.");
-        int min = 1000;
+        int min = inputArray1[0];
         for (int j : inputArray1) {
             if (j < min) {
                 min = j;
             }
         }
         System.out.println("Минимальное значение " + min + " рублей.");
-        int avarage = 0;
-        avarage = sum / inputArray1.length - 1;
-        System.out.println(avarage);
-        int[] outputArray1 = {sum, max, min, avarage};
+        float avarage = 0;
+        avarage = (float) sum / inputArray1.length - 1;
+        System.out.println("Среднее значение " + avarage + " рублей.");
+        float[] outputArray1 = {sum, max, min, avarage};
         System.out.println(Arrays.toString(inputArray1));
         System.out.println(Arrays.toString(outputArray1));
+        System.out.println();
 
         System.out.println("Задача 2");
         int[] inputArray2 = {50, 10, 34, 90, 20};
-        int[] outputArray2 = new int[5];
-        int tax = 0;
-        for (int b = 0; b < inputArray2.length; b++) {
-            tax = (inputArray2[b] * 13) / 100;
-            outputArray2[b] = tax;
+        float[] outputArray2 = new float[inputArray2.length];
+        int a = 0;
+        for (int k : inputArray2) {
+            float tax = (k * 13) / 100.0f;
+            outputArray2[a] = tax;
+            a++;
         }
         System.out.println(Arrays.toString(inputArray2));
         System.out.println(Arrays.toString(outputArray2));
+        System.out.println();
 
         System.out.println("Задача 3");
         int[] inputArray3 = {1000, 5500, 6000, 4500, 10000};
-        boolean[] outputArray3 = new boolean[5];
-        for (int i = 0; i < inputArray3.length; i++) {
-            if (inputArray3[i] > 5000) {
-                outputArray3[i] = true;
+        boolean[] outputArray3 = new boolean[inputArray3.length];
+        int k = 0;
+        for (final int i : inputArray3) {
+            if (i > 5000) {
+                outputArray3[k] = true;
             } else {
-                outputArray3[i] = false;
+                outputArray3[k] = false;
             }
+            k++;
         }
         System.out.println(Arrays.toString(inputArray3));
         System.out.println(Arrays.toString(outputArray3));
+        System.out.println();
 
         System.out.println("Задача 4");
-        int[] inputArray4 = {1, 4, 5, 6, 10};
-        boolean[] outputArray4 = new boolean[5];
-        for (int i = 0; i < inputArray4.length; i++) {
-            if (inputArray4[i] < 0) {
-                outputArray4[i] = false;
+        int[] inputArray4 = {1, 4, -5, 6, 10};
+        boolean outputArray4 = true;
+        for (final int balance : inputArray4) {
+            if (balance < 0) {
+                outputArray4 = false;
                 break;
-            } else {
-                outputArray4[i] = true;
             }
         }
         System.out.println(Arrays.toString(inputArray4));
-        System.out.println(Arrays.toString(outputArray4));
+        System.out.println(outputArray4);
+        System.out.println();
 
         System.out.println("Задача 5");
-        int[] inputArray5 = {-1, 2, -5, 7, 8};
-        boolean[] outputArray5 = new boolean[5];
-        for (int i = 0; i < inputArray5.length; i++) {
-            if (inputArray5[i] > 0) {
-                outputArray5[i] = true;
-            } else {
-                outputArray5[i] = false;
+        int[] inputArray5 = {-1, -2, -5, 7, 8};
+        int outputArray5 = 0;
+        for (final int effective : inputArray5) {
+            if (effective > 0) {
+                outputArray5++;
             }
         }
         System.out.println(Arrays.toString(inputArray5));
-        System.out.println(Arrays.toString(outputArray5));
+        System.out.println(outputArray5);
     }
 }
