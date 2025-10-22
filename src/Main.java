@@ -76,14 +76,15 @@ public class Main {
         System.out.println();
 
         System.out.println("Задача 5");
-        int[] inputArray5 = {-1, -2, -5, 7, 8};
-        int outputArray5 = 0;
+        int[] inputArray5 = {-1, -2, 5, 7, 8};
+        int count = 0;
         for (final int effective : inputArray5) {
             if (effective > 0) {
-                outputArray5++;
+                count++;
             }
         }
+        int [] outputArray5 =  {count} ;
         System.out.println(Arrays.toString(inputArray5));
-        System.out.println(outputArray5);
+        System.out.println(Arrays.toString(outputArray5));
     }
 }
