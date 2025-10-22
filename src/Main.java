@@ -83,7 +83,7 @@ public class Main {
                 count++;
             }
         }
-        int [] outputArray5 =  {count} ;
+        int[] outputArray5 = {count};
         System.out.println(Arrays.toString(inputArray5));
         System.out.println(Arrays.toString(outputArray5));
     }
